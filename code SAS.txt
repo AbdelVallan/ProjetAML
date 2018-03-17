@@ -1,0 +1,9 @@
+data want;
+set have;
+array parsed_vars(*) new_var1-new_var6;
+i=1;
+do while(scan(str, i, ".") ne "");
+parsed_vars(i) =scan(str, i, ".");
+i+1;
+end;
+run;
